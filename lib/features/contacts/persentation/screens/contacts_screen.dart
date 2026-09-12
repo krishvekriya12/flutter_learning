@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../settings/presentation/screens/settings_screen.dart';
+
 class ContactsScreen extends StatelessWidget {
   const ContactsScreen({super.key});
 
@@ -34,6 +36,25 @@ class ContactsScreen extends StatelessWidget {
                   Text(
                     "Krish - 123456789",
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return SettingsScreen();
+                          },
+                        ),
+                      );
+                    },
+                    child: Text("Go to Setting Screen"),
+                  ),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: Text("Back"),
                   ),
                 ],
               ),

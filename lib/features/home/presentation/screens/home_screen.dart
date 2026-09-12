@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_learning/features/settings/presentation/screens/settings_screen.dart';
+
+import '../../../contacts/persentation/screens/contacts_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -15,13 +18,35 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(title: const Text('Code With Krish'), elevation: 1),
       body: Center(
-        child: Text(
-          data.toString(),
-          style: const TextStyle(
-            color: Colors.black87,
-            fontSize: 30,
-            fontWeight: FontWeight.w900,
-          ),
+        child: Column(
+          children: [
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ContactsScreen();
+                    },
+                  ),
+                );
+              },
+              child: Text('Go to Contact Screen'),
+            ),
+            TextButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return SettingsScreen();
+                    },
+                  ),
+                );
+              },
+              child: Text("Go to Setting Screen"),
+            ),
+          ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
