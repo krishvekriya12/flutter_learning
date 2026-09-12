@@ -46,6 +46,23 @@ class _HomeScreenState extends State<HomeScreen> {
               },
               child: Text("Go to Setting Screen"),
             ),
+
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/settings');
+              },
+              child: Text("Named Settings"),
+            ),
+
+
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/contact');
+              },
+              child: Text("Named Contacts 1"),
+            ),
+
+
           ],
         ),
       ),
