@@ -39,13 +39,12 @@ class ContactsScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushReplacement(
+                      Navigator.pushAndRemoveUntil(
                         context,
                         MaterialPageRoute(
-                          builder: (context) {
-                            return SettingsScreen();
-                          },
+                          builder: (context) => const SettingsScreen(),
                         ),
+                        (route) => false,
                       );
                     },
                     child: Text("Go to Setting Screen"),
